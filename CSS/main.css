@@ -7,6 +7,9 @@ a {
   text-decoration: none;
   color: #fff;
 }
+i {
+  color: hsl(37, 81%, 56%);
+}
 .top_nav {
   background-color: hsl(23, 15%, 10%);
   width: 100%;
@@ -56,7 +59,6 @@ a {
 
 .nav_bar {
   width: 100%;
-  /* background-color: hsl(23, 15%, 10%); */
   padding: 30px 0;
   padding-bottom: 70px;
 }
@@ -168,10 +170,10 @@ a {
 .aboutt {
   position: relative;
   display: flex;
+  align-items: center;
 }
 .about_image {
   position: relative;
-  z-index: 1000;
   width: 50%;
 }
 .about_boxes {
@@ -185,7 +187,7 @@ a {
   width: 60%;
   height: 60vh;
   background-color: #fdf5eb;
-  position: relative;
+  position: absolute;
   border-radius: 10px;
 }
 .about_image .orange_box {
@@ -197,18 +199,17 @@ a {
 }
 .about_image .about_img1,
 .about_img2 {
-  position: relative;
+  position: absolute;
   width: 45%;
   height: 300px;
-  overflow-x: hidden;
 }
 .about_image .about_img1 {
-  top: -450px;
+  top: -300px;
+  left: 29px;
 }
-
 .about_image .about_img2 {
-  transform: translate(275px, 50px);
-  top: -600px;
+  top: -60px;
+  right: 10px;
 }
 .about_image .about_img1 img,
 .about_img2 img {
@@ -222,10 +223,77 @@ a {
   border-radius: 10px;
   overflow: hidden;
 }
+
 .about_info {
   display: flex;
   flex-direction: column;
   width: 50%;
+  gap: 30px;
+  width: 40%;
+}
+.about_info h1 {
+  font-size: 2.5em;
+}
+.checks {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 20px;
 }
 
+.about_info .button {
+  border-radius: 100px;
+  border: none;
+  background-color: hsl(37, 81%, 56%);
+  color: white;
+  font-weight: bold;
+  width: 40%;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+.button:hover {
+  background-color: hsl(0, 0%, 21%);
+  transition: 0.4s ease-in-out;
+}
 /* serviceAbout start  */
+/* products start */
+.products {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background-color: #fdf5eb;
+}
+.productCall {
+  background-color: hsl(37, 81%, 56%);
+  padding: 50px 0;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 100px;
+}
+.callUs {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.call {
+  display: flex;
+  width: 50%;
+  color: #fff;
+}
+.call h2 {
+  font-size: 50px;
+}
+.callUs h1 {
+  width: 50%;
+  font-size: 60px;
+  color: #fff;
+}
+#explore {
+  font-size: 2.5em;
+  width: 40%;
+  text-align: center;
+}
