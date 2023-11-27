@@ -3,9 +3,12 @@
   margin: 0;
   box-sizing: border-box;
 }
+p {
+  margin-bottom: 0 !important;
+}
 a {
-  text-decoration: none;
-  color: #fff;
+  text-decoration: none !important;
+  color: #fff !important;
 }
 i {
   color: hsl(37, 81%, 56%);
@@ -13,11 +16,13 @@ i {
 .top_nav {
   background-color: hsl(23, 15%, 10%);
   width: 100%;
+  position: relative;
+  z-index: 1000;
 }
 .topBar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center !important;
   background-color: 0;
   color: #fff;
   width: 90%;
@@ -34,9 +39,9 @@ i {
   justify-content: center;
   align-items: center;
 }
-.border {
-  border-right: 1px white solid;
+.borders {
   width: 50px;
+  border-right: 1px solid white;
   height: 50px;
   margin: 0 auto;
   display: flex;
@@ -45,22 +50,16 @@ i {
 }
 /* main_page Start */
 .main_page {
-  display: flex;
-  flex-direction: column;
-
-  background-image: linear-gradient(rgba(4, 0, 0, 0.385), rgba(4, 0, 0, 0.385)),
-    url(/img/carousel-1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding-bottom: 100px;
-  overflow-x: hidden;
+  position: relative;
+  background-color: #000;
 }
 
 .nav_bar {
   width: 100%;
   padding: 30px 0;
-  padding-bottom: 70px;
+  z-index: 1000;
+  z-index: 1000;
+  position: fixed;
 }
 .navBar {
   display: flex;
@@ -70,21 +69,27 @@ i {
   justify-content: space-between;
   margin: 0 auto;
 }
-.logo {
-  width: 20%;
-}
+
 .navLinks {
   width: 60%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.call {
+.navLinks a:hover {
+  color: hsl(37, 81%, 56%);
+  transition: 0.2s ease-in-out;
+}
+.calls {
   display: flex;
   align-items: center;
   gap: 20px;
-  width: 20%;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+.callNo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .ellipse {
   width: 50px;
@@ -95,19 +100,49 @@ i {
   border-radius: 100px;
   justify-content: center;
 }
+.hamburger {
+  display: none;
+  cursor: pointer;
+  border: 3px solid black;
+  padding: 3px;
+}
+.bar {
+  display: block;
+  background-color: black;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+}
 .main_pageItem {
+  width: 100%;
+}
+.overlay_image {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+.pageItem_container {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  width: 90%;
   margin: 0 auto;
   color: #fff;
-  margin-bottom: 120px;
+  position: relative;
+  padding-bottom: 120px;
+  padding-top: 120px;
+  width: 90%;
 }
 .main_pageItem h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: bolder;
-  width: 50%;
+  width: 70%;
 }
 .btn {
   display: flex;
@@ -118,13 +153,60 @@ i {
   background-color: hsl(37, 81%, 56%);
   color: white;
   font-weight: bold;
-  width: 15%;
+  width: 30%;
   display: flex;
   height: 50px;
   align-items: center;
   justify-content: center;
 }
 /* main_page End */
+/* carousel1 */
+.bttn {
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  transform: translateY(-8px) rotate(-45deg);
+  top: -40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.buttons {
+  position: relative;
+  width: 180px;
+  top: -40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.carousel-control-next,
+.carousel-control-prev {
+  align-self: center;
+  width: 140px !important;
+  height: 80px;
+  opacity: 1 !important;
+}
+
+#icon-black {
+  color: hsl(37, 81%, 56%);
+  font-size: 50px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  transition: 0.6s ease-in-out;
+}
+.carousel-control-prev:hover #icon-black {
+  color: black;
+  transition: 0.6s ease-in-out;
+}
+.carousel-control-next:hover #icon-black {
+  color: black;
+  transition: 0.6s ease-in-out;
+}
+.carousel-item {
+  transition: -webkit-transform 0.7s ease !important;
+}
 
 /* serviceAbout start  */
 .serviceAbout {
@@ -280,7 +362,7 @@ i {
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 .call {
   display: flex;
@@ -288,10 +370,9 @@ i {
   color: #fff;
 }
 .call h2 {
-  font-size: 50px;
+  font-size: 40px;
 }
 .callUs h1 {
-  width: 50%;
   font-size: 60px;
   color: #fff;
 }
@@ -605,3 +686,50 @@ footer {
 }
 
 /* our footer end */
+/* mediaQuery */
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+    margin-left: 50px;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .navLinks {
+    position: absolute;
+    right: -100%;
+    top: -100%;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 70%;
+    transition: 1s;
+    z-index: 10;
+    align-items: flex-start;
+    padding: 0 20px;
+  }
+
+  .link {
+    margin: 16px 0;
+  }
+  .navBar {
+    justify-content: space-between;
+  }
+
+  .navLinks.active {
+    right: 0;
+    top: 50px;
+    transform: translateX(-23%);
+  }
+  .navBar .calls {
+    display: none;
+  }
+}
